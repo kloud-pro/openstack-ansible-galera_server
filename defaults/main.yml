@@ -53,6 +53,10 @@ galera_repo: "{{ _galera_repo }}"
 # Set the gpg keys needed to be imported
 galera_gpg_keys: "{{ _galera_gpg_keys | default([]) }}"
 
+percona_xtrabackup_pkg: "percona-xtrabackup-24"
+when:
+  - galera_major_version == "10.2" or galera_major_version == "10.3"
+
 # Set the rpo information for the Percona Xtrabackup repository
 galera_percona_xtrabackup_repo: "{{ _galera_percona_xtrabackup_repo | default({}) }}"
 

@@ -84,7 +84,7 @@ galera_debconf_items:
 
 galera_server_percona_distro_packages:
   - percona-toolkit
-  - percona-xtrabackup
+  - "{{ percona_xtrabackup_pkg | default('percona-xtrabackup') }}"
   - "{{ (galera_xtrabackup_compression | bool) | ternary('qpress', '') }}"
 
 # Repositories

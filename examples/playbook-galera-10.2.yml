@@ -1,0 +1,10 @@
+- name: Install Galera server
+  hosts: galera_all
+  user: root
+  roles:
+    - { role: "galera_server" }
+  vars:
+    galera_root_password: secrete
+    galera_major_version: 10.2
+    galera_minor_version: 16
+
